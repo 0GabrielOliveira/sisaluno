@@ -37,27 +37,27 @@ if(isset($_GET['cadastrar'])) {
             }
 }
 #######alterar
-if(isset($_POST['update'])){
+if(isset($_POST['update'])) {
 
     ##dados recebidos pelo metodo POST
-    $nomedisciplina = $_GET["nomedisciplina"];
-    $ch = $_GET["ch"];
-    $semestre = $_GET["semestre"];
-    $idprofessor = $_GET["idprofessor"];
+    $nomedisciplina = $_POST["nomedisciplina"];
+    $ch = $_POST["ch"];
+    $semestre = $_POST["semestre"];
+    $idprofessor = $_POST["idprofessor"];
     $id = $_POST["id"];
    
       ##codigo sql
-    $sql = "UPDATE  professor SET nomedisciplina= :nomedisciplina, ch= :ch, semestre= :semestre, idprofessor= :idprofessor, WHERE id= :id ";
+    $sql = "UPDATE  disciplina SET nomedisciplina= :nomedisciplina, ch= :ch, semestre= :semestre, idprofessor= :idprofessor WHERE id= :id ";
    
     ##junta o codigo sql a conexao do banco
     $stmt = $conexao->prepare($sql);
 
     ##diz o paramentro e o tipo  do paramentros
-    $stmt->bindParam(':id',$id, PDO::PARAM_INT);
     $stmt->bindParam(':nomedisciplina',$nomedisciplina, PDO::PARAM_STR);
     $stmt->bindParam(':ch',$ch, PDO::PARAM_STR);
     $stmt->bindParam(':semestre',$semestre, PDO::PARAM_STR);
     $stmt->bindParam(':idprofessor',$idprofessor, PDO::PARAM_INT);
+    $stmt->bindParam(':id',$id, PDO::PARAM_INT);
     $stmt->execute();
  
 
