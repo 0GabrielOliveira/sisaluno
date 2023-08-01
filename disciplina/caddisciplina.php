@@ -18,7 +18,7 @@
      <label for="">Semestre:</label><br>
      <input type="text" name="semestre" required maxlength="5"><br>
      <label for="">ID Professor:</label><br>
-     <input type="text" name="idprofessor" required><br>
+     <input type="number" name="idprofessor" required><br>
 
      <input type="submit" name="cadastrar" value="Cadastrar">
      </form>
