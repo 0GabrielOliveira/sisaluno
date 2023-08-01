@@ -14,7 +14,7 @@
    $id = $_POST['id'];
 
    ##sql para selecionar apens um aluno
-   $sql = "SELECT * FROM professor where id= :id";
+   $sql = "SELECT * FROM disciplina where id= :id";
    
    # junta o sql a conexao do banco
    $retorno = $conexao->prepare($sql);
@@ -41,11 +41,11 @@
   <label for="">Nome:</label><br>
   <input type="text" name="nomedisciplina" value=<?php echo $nomedisciplina?>><br>
      <label for="">Carga Horária:</label><br>
-     <input type="number" name="ch" value=<?php echo $ch?>><br>
+     <input type="text" name="ch" value=<?php echo $ch?>><br>
      <label for="">Semestre:</label ><br>
-     <input type="text" name="text" value=<?php echo $semestre?>><br>
+     <input type="text" name="semestre" value=<?php echo $semestre?>><br>
      <label for="">ID Professor:</label><br>
-     <input type="text" name="idprofessor" value=<?php echo $idprofessor?>><br>
+     <input type="number" name="idprofessor" value=<?php echo $idprofessor?>><br>
      <input type="submit" name="update" value="Alterar">
      <input type="hidden" name="id" id="" value=<?php echo $id ?> >
   </form>
